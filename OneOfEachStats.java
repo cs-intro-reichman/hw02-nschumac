@@ -24,6 +24,48 @@ public class OneOfEachStats {
 		//// just like you had in the previous version, except that the 
 		//// randomization will be based on the given seed.
 		//// This is the only change that you have to do in the program.
-		    
+
+        int familiesWithTwoChildren = 0;
+        int familiesWithThreeChildren = 0;
+        int familiesWithFourOrMoreChildren = 0;
+        String mostCommon;
+        Double totalChildCount = 0.0;
+
+        for (int i = 0; i < T; ++i) {
+            Boolean boyCreated = false;
+            Boolean girlCreated = false;
+            int childrenCount = 0;
+
+            while (!boyCreated || !girlCreated) {
+                if (generator.nextDouble() <= 0.5) {
+                    boyCreated = true;
+                } else {
+                    girlCreated = true;
+                }
+                childrenCount++;
+            }
+
+            totalChildCount += childrenCount;
+
+            if (childrenCount >= 4) {
+                familiesWithFourOrMoreChildren++;
+            } else if (childrenCount == 3) {
+                familiesWithThreeChildren++;
+            } else {
+                familiesWithTwoChildren++;
+            }
+        }
+
+        System.out.printf("Average: %f children to get at least one of each gender.", T / totalChildCount );
+        System.out.printf("Number of families with 2 children: %d", familiesWithTwoChildren);
+        System.out.printf("Number of families with 3 children: %d", familiesWithThreeChildren);
+        System.out.printf("Number of families with 4 or more children: %d", familiesWithFourOrMoreChildren);
+
+        if (familiesWithFourOrMoreChildren > familiesWithThreeChildren) {
+            mostCommon = familiesWithFourOrMoreChildren > familiesWithTwoChildren ? "4 or more" : "2";
+        } else {
+            mostCommon = familiesWithThreeChildren > familiesWithTwoChildren ? "3" : "2";
+        }
+        System.out.printf("The most common number of children is %d.");
 	}
 }
