@@ -1,8 +1,8 @@
 /**
- *  Gets a command-line argument n (int), and prints an n-by-n damka board.
+ * Gets a command-line argument n (int), and prints an n-by-n damka board.
  */
 public class DamkaBoard {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
         int boardSize = Integer.parseInt(args[0]);
 
@@ -14,5 +14,5 @@ public class DamkaBoard {
                 System.out.println(" *".repeat(boardSize));
             }
         }
-	}
+    }
 }

@@ -1,16 +1,16 @@
 import java.util.Random;
 
 /**
- *  Computes some statistics about families in which the parents decide 
- *  to have children until they have at least one child of each gender.
- *  The program expects to get one command-line argument: an int value
- * 	that determines how many families to simulate.
+ * Computes some statistics about families in which the parents decide to have
+ * children until they have at least one child of each gender. The program
+ * expects to get one command-line argument: an int value that determines how
+ * many families to simulate.
  */
 public class OneOfEachStats1 {
-	public static void main (String[] args) {
-		// Gets the two command-line arguments
-		int T = Integer.parseInt(args[0]);
-        Random generator = new Random();  
+    public static void main(String[] args) {
+        // Gets the two command-line arguments
+        int T = Integer.parseInt(args[0]);
+        Random generator = new Random();
 
         int familiesWithTwoChildren = 0;
         int familiesWithThreeChildren = 0;
@@ -43,16 +43,30 @@ public class OneOfEachStats1 {
             }
         }
 
-        System.out.printf("Average: %f children to get at least one of each gender.\n", totalChildCount / T );
-        System.out.printf("Number of families with 2 children: %d\n", familiesWithTwoChildren);
-        System.out.printf("Number of families with 3 children: %d\n", familiesWithThreeChildren);
-        System.out.printf("Number of families with 4 or more children: %d\n", familiesWithFourOrMoreChildren);
+        System.out.printf(
+                "Average: %f children to get at least one of each gender.\n",
+                totalChildCount / T);
+        System.out.printf("Number of families with 2 children: %d\n",
+                familiesWithTwoChildren);
+        System.out.printf("Number of families with 3 children: %d\n",
+                familiesWithThreeChildren);
+        System.out.printf(
+                "Number of families with 4 or more children: %d\n",
+                familiesWithFourOrMoreChildren);
 
         if (familiesWithFourOrMoreChildren > familiesWithThreeChildren) {
-            mostCommon = familiesWithFourOrMoreChildren > familiesWithTwoChildren ? "4 or more" : "2";
+            mostCommon =
+                    familiesWithFourOrMoreChildren > familiesWithTwoChildren
+                            ? "4 or more"
+                            : "2";
         } else {
-            mostCommon = familiesWithThreeChildren > familiesWithTwoChildren ? "3" : "2";
+            mostCommon =
+                    familiesWithThreeChildren > familiesWithTwoChildren
+                            ? "3"
+                            : "2";
         }
-        System.out.printf("The most common number of children is %s.\n", mostCommon);
-	}
+        System.out.printf(
+                "The most common number of children is %s.\n",
+                mostCommon);
+    }
 }
