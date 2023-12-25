@@ -56,16 +56,16 @@ public class OneOfEachStats {
             }
         }
 
-        System.out.printf("Average: %f children to get at least one of each gender.", totalChildCount / T);
-        System.out.printf("Number of families with 2 children: %d", familiesWithTwoChildren);
-        System.out.printf("Number of families with 3 children: %d", familiesWithThreeChildren);
-        System.out.printf("Number of families with 4 or more children: %d", familiesWithFourOrMoreChildren);
+        System.out.printf("Average: %f children to get at least one of each gender.\n", totalChildCount / T );
+        System.out.printf("Number of families with 2 children: %d\n", familiesWithTwoChildren);
+        System.out.printf("Number of families with 3 children: %d\n", familiesWithThreeChildren);
+        System.out.printf("Number of families with 4 or more children: %d\n", familiesWithFourOrMoreChildren);
 
         if (familiesWithFourOrMoreChildren > familiesWithThreeChildren) {
             mostCommon = familiesWithFourOrMoreChildren > familiesWithTwoChildren ? "4 or more" : "2";
         } else {
             mostCommon = familiesWithThreeChildren > familiesWithTwoChildren ? "3" : "2";
         }
-        System.out.printf("The most common number of children is %d.");
+        System.out.printf("The most common number of children is %s.\n", mostCommon);
 	}
 }
