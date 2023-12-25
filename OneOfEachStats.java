@@ -56,7 +56,7 @@ public class OneOfEachStats {
             }
         }
 
-        System.out.printf("Average: %f children to get at least one of each gender.", T / totalChildCount );
+        System.out.printf("Average: %f children to get at least one of each gender.", totalChildCount / T);
         System.out.printf("Number of families with 2 children: %d", familiesWithTwoChildren);
         System.out.printf("Number of families with 3 children: %d", familiesWithThreeChildren);
         System.out.printf("Number of families with 4 or more children: %d", familiesWithFourOrMoreChildren);
